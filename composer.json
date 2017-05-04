@@ -13,7 +13,10 @@
         }
     },
     "extra": {
-        "class": "DrupalLibraryMapping\\Plugin"
+        "class": "DrupalLibraryMapping\\Plugin",
+        "drupal-library-mapping": {
+            "jquery-easing-original": "easing"
+        }
     },
     "require-dev": {
         "composer/composer": "dev-master"

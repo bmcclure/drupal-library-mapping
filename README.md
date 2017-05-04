@@ -8,31 +8,26 @@ which need to be named differently for Drupal.
 
 ## How to use the plugin
 
-First, require "wikimedia/composer-merge-plugin" and "bmcclure/drupal-library-mapping".
+First, require "bmcclure/drupal-library-mapping".
 
-Then, update your merge-plugin settings similar to this. Make sure 
-to set merge-extre to true!
-
-(Note: This assumes you're including core's composer.json as well.)
-
-    "merge-plugin": {
-        "include": [
-            "core/composer.json",
-            "vendor/bmcclure/drupal-library-mapping/composer.json"
-        ],
-        "recurse": false,
-        "replace": false,
-        "merge-dev": false,
-        "merge-extra": true
-    }
-
-Next, if you want to enable Asset Packagist support, add the following to your
+Enable Asset Packagist support, add the following to your
 repositories section:
 
     {
         "type": "composer",
         "url": "https://asset-packagist.org"
     }
+
+Set up your installer paths in extras, like this:
+
+    "installer-types": ["library", "drupal-library", "bower-asset", "npm-asset"],
+    "installer-paths": {
+        "libraries/{$name}": [
+            "type:drupal-library",
+            "type:bower-asset",
+            "type:npm-asset"
+        ]
+    },
 
 The plugin will automatically handle installing bower and npm assets to the 
 "libraries/" directory (but you can override the location in your own 
@@ -45,8 +40,9 @@ in your main composer.json file, just start requiring things from asset-packagis
 
 You may wish to map other library names to common ones.
 
-You can override the "drupal-library-mapping" key in extras. It's recommended to 
-copy the default one and then extend it. Example:
+You can add new mappings to the "drupal-library-mapping" key in extras.
+
+Example:
 
     "drupal-library-mapping": {
         "jquery-easing-original": "easing"
