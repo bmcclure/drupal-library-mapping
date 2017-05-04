@@ -15,7 +15,8 @@
     "extra": {
         "class": "DrupalLibraryMapping\\Plugin",
         "drupal-library-mapping": {
-            "jquery-easing-original": "easing"
+            "jquery-easing-original": "easing",
+            "masonry-layout": "masonry"
         }
     },
     "require-dev": {
