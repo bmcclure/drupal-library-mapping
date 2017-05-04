@@ -41,7 +41,7 @@ class Handler {
     }
 
     public function getMapping() {
-        $this->io->write(sprintf("<info>Gather Drupal library mapping.</info>"));
+        $this->io->write(sprintf("<info>Gathering Drupal library mapping</info>"));
         $extra = $this->composer->getPackage()->getExtra();
         $mapping = (isset($extra['drupal-library-mapping']))
             ? $extra['drupal-library-mapping']
@@ -68,7 +68,7 @@ class Handler {
             $name = $package->getName();
             if (array_key_exists($name, $this->mapping)) {
                 $new_name = $this->mapping[$name];
-                $this->io->write(sprintf("<info>Mapping library %s to %s.</info>", $name, $new_name));
+                $this->io->write(sprintf("<info>Mapping library %s to %s</info>", $name, $new_name));
                 $parent_path = dirname($path);
                 $new_path = $parent_path . DIRECTORY_SEPARATOR . $new_name;
                 $this->fs->removeDirectory($new_path);
