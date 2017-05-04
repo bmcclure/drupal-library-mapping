@@ -10,15 +10,9 @@ which need to be named differently for Drupal.
 
 First, require "bmcclure/drupal-library-mapping".
 
-Enable Asset Packagist support, add the following to your
-repositories section:
+Enable Asset Packagist support following their instructions.
 
-    {
-        "type": "composer",
-        "url": "https://asset-packagist.org"
-    }
-
-Set up your installer paths in extras, like this:
+Configure the following in extra:
 
     "installer-types": ["library", "drupal-library", "bower-asset", "npm-asset"],
     "installer-paths": {
@@ -27,14 +21,21 @@ Set up your installer paths in extras, like this:
             "type:bower-asset",
             "type:npm-asset"
         ]
-    },
+    }
 
-The plugin will automatically handle installing bower and npm assets to the 
-"libraries/" directory (but you can override the location in your own 
-composer.json if you wish).
+Now simply require assets from Asset Packagist, and they'll be mapped appropriately.
 
-There's nothing else you need to do after requiring this plugin
-in your main composer.json file, just start requiring things from asset-packagist!
+## Customizing the copy type
+
+By default, the mapped plugins are copied.
+
+Add the following to extras to customize the method used for mapping:
+
+    "drupal-library-mapping-type": "symlink"
+    
+Accepted values are "copy" (the default), "symlink", and "move".
+
+Note that a side effect of using "move" is that composer will reinstall the package every time it runs.
 
 ## Customizing the package name map
 
