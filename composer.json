@@ -16,7 +16,8 @@
         "class": "DrupalLibraryMapping\\Plugin",
         "drupal-library-mapping": {
             "jquery-easing-original": "easing",
-            "masonry-layout": "masonry"
+            "masonry-layout": "masonry",
+            "slick-carousel": "slick"
         }
     },
     "require-dev": {
