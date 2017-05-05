@@ -2,9 +2,15 @@
 
 A helper for installing library assets for Drupal.
 
-If you're wanting to use asset-packagist.org for installing Drupal libraries, 
-this will set things up properly, including renaming some common libraries 
-which need to be named differently for Drupal.
+By using Asset Packagist, you can already install Drupal assets into the right location.
+
+But, what about packages that aren't named the way a Drupal module is expecting?
+
+This package both includes common name mappings already, and allows you to specify your 
+own in composer.json.
+
+Then, it will symlink, copy, or move the mapped assets to the right location whenever 
+they are installed or updated.
 
 ## How to use the plugin
 
