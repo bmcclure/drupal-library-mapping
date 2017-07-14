@@ -70,7 +70,7 @@ class Handler {
             $extra = $package->getExtra();
             if (isset($extra['drupal-library-mapping'])) {
                 $package_mapping = $extra['drupal-library-mapping'];
-                $mapping = array_merge_recursive($mapping, $package_mapping);
+                $mapping = array_merge($mapping, $package_mapping);
             }
         }
 
