@@ -2,7 +2,7 @@
     "name": "bmcclure/drupal-library-mapping",
     "description": "A helper for installing library assets for Drupal.",
     "type": "composer-plugin",
-    "license": "GPL-2.0+",
+    "license": "MIT",
     "require": {
         "php": ">=5.5",
         "composer-plugin-api": "^1.0 || ^2.0"
